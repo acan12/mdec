@@ -53,6 +53,8 @@ gem "mail_view", "~> 2.0.4"
 # cache
 gem 'actionpack-page_caching'
 
+# Role user
+gem 'rolify'
 
 
 group :development do
@@ -75,7 +77,6 @@ group :production, :staging do
 end
 
 group :test do
-  gem 'cucumber-rails'  
   gem 'capybara'
   gem 'database_cleaner'
   gem 'selenium-webdriver'

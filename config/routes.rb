@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
-  devise_for :users
+  
   root 'welcome#index'
+  
+  scope '/admin' do
+    devise_for :users
+  end
+  
+  namespace :admin do
+    get '/' =>  redirect("admin/dashboard")
+    resources :dashboard
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
